@@ -1,0 +1,109 @@
+// Fonts
+@import url('https://fonts.bunny.net/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Import Bootstrap SCSS
+@import "bootstrap/scss/bootstrap";
+
+// Variáveis de cor
+$background-color: #000000; // Preto piano
+$primary-color: #DAA520; // Goldenrod (dourado mais suave)
+$secondary-color: #333333; // Cinza escuro para contraste
+$highlight-color: #DAA520; // Goldenrod
+
+// Estilos globais
+body {
+    background-color: $background-color;
+    color: $primary-color;
+    font-family: 'Nunito', sans-serif;
+}
+
+a {
+    color: $primary-color;
+    text-decoration: none;
+
+    &:hover, &:focus {
+        color: lighten($highlight-color, 10%);
+        text-decoration: underline;
+    }
+}
+
+.navbar {
+    background-color: $background-color;
+    border-bottom: 1px solid $secondary-color;
+
+    .navbar-brand, .nav-link {
+        color: $primary-color !important;
+        
+        &:hover {
+            color: lighten($highlight-color, 10%) !important;
+        }
+    }
+
+    .dropdown-menu {
+        background-color: $background-color;
+        border: 1px solid $secondary-color;
+
+        .dropdown-item {
+            color: $primary-color !important;
+
+            &:hover {
+                background-color: $highlight-color;
+                color: $background-color !important;
+            }
+        }
+    }
+}
+
+.btn-primary {
+    background-color: $highlight-color;
+    border: none;
+    color: $background-color;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+
+    &:hover, &:focus {
+        background-color: lighten($highlight-color, 10%);
+        transform: scale(1.05);
+    }
+
+    &:active {
+        background-color: darken($highlight-color, 10%);
+        transform: scale(0.95);
+    }
+}
+
+.container {
+    padding: 2rem 0;
+}
+
+.card {
+    background-color: #111111;
+    border: 1px solid $secondary-color;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .card-header, .card-body {
+        color: $primary-color;
+    }
+}
+
+.footer {
+    background-color: $background-color;
+    color: $secondary-color;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+// Responsividade
+@media (max-width: 768px) {
+    .navbar-brand, .nav-link {
+        color: $primary-color !important;
+    }
+}
+
